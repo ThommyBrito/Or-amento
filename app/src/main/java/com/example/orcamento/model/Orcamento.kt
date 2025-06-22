@@ -1,4 +1,4 @@
-package com.example.orcamento.Model
+package com.example.orcamento.model
 
 data class Orcamento(
     val id: Int,

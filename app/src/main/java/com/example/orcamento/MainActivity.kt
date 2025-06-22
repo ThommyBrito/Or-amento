@@ -1,4 +1,4 @@
-package com.seuprojeto.orcamento
+package com.example.orcamento
 
 import android.os.Bundle
 

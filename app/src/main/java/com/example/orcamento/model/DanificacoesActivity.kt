@@ -1,5 +1,6 @@
 package com.example.orcamento.model
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
@@ -138,6 +139,8 @@ class DanificacoesActivity : AppCompatActivity() {
         }
 
         Log.d("ENVIANDO_JSON", json.toString())
-        // Aqui você pode usar Retrofit, Volley, etc.
+        val intent = Intent(this, ResumoActivity::class.java)
+        intent.putExtra("json_danificacoes", json.toString())
+        startActivity(intent)
     }
 }

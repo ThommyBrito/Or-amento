@@ -18,8 +18,43 @@ class DanificacoesActivity : AppCompatActivity() {
     private lateinit var btnPolimento: LinearLayout
     private lateinit var btnFinalizar: Button
 
-    private val opcoesDanos = arrayOf("Arranhão", "Amassado", "Trincado", "Faltando peça")
+    private val opcoesDianteira = arrayOf(
+        "Amassado no para-choque",
+        "Desalinhamento do capô",
+        "Arranhões na pintura",
+        "Retoque de pintura",
+        "Desempenar capô",
+        "Reparar lata com massa"
+    )
 
+    private val opcoesLateral = arrayOf(
+        "Amassado na porta",
+        "Arranhões na lateral",
+        "Desalinhamento da lataria",
+        "Retoque de pintura",
+        "Desempenar lateral",
+        "Refazer pintura completa da lateral"
+    )
+
+    private val opcoesTraseira = arrayOf(
+        "Amassado no porta-malas",
+        "Arranhões no para-choque traseiro",
+        "Retoque de pintura",
+        "Desempenar tampa traseira",
+        "Alinhamento do porta-malas",
+        "Reparo com massa plástica"
+    )
+
+    private val opcoesPolimento = arrayOf(
+        "Remover riscos leves",
+        "Remover manchas",
+        "Descontaminação da pintura",
+        "Polimento técnico",
+        "Refinamento da pintura",
+        "Aplicação de cera"
+    )
+
+    // ✅ Listas selecionadas
     private val selecionadosDianteira = mutableListOf<String>()
     private val selecionadosLateral = mutableListOf<String>()
     private val selecionadosTraseira = mutableListOf<String>()
@@ -29,28 +64,26 @@ class DanificacoesActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_danificacoes)
 
-        // Vincula os elementos do layout
         btnDianteira = findViewById(R.id.btn_dianteira)
         btnLateral = findViewById(R.id.btn_lateral)
         btnTraseira = findViewById(R.id.btn_traseira)
         btnPolimento = findViewById(R.id.btn_polimento)
         btnFinalizar = findViewById(R.id.btn_finalizar)
 
-        // Clique em cada "botão"
         btnDianteira.setOnClickListener {
-            mostrarDialogMultiselect("Danos Dianteira", opcoesDanos, selecionadosDianteira)
+            mostrarDialogMultiselect("Danos Dianteira", opcoesDianteira, selecionadosDianteira)
         }
 
         btnLateral.setOnClickListener {
-            mostrarDialogMultiselect("Danos Lateral", opcoesDanos, selecionadosLateral)
+            mostrarDialogMultiselect("Danos Lateral", opcoesLateral, selecionadosLateral)
         }
 
         btnTraseira.setOnClickListener {
-            mostrarDialogMultiselect("Danos Traseira", opcoesDanos, selecionadosTraseira)
+            mostrarDialogMultiselect("Danos Traseira", opcoesTraseira, selecionadosTraseira)
         }
 
         btnPolimento.setOnClickListener {
-            mostrarDialogMultiselect("Danos Polimento", opcoesDanos, selecionadosPolimento)
+            mostrarDialogMultiselect("Danos Polimento", opcoesPolimento, selecionadosPolimento)
         }
 
         btnFinalizar.setOnClickListener {

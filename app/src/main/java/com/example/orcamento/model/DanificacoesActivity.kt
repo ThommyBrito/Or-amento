@@ -3,6 +3,7 @@ package com.example.orcamento.model
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
+import android.widget.EditText
 import android.widget.LinearLayout
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -11,6 +12,10 @@ import org.json.JSONArray
 import org.json.JSONObject
 
 class DanificacoesActivity : AppCompatActivity() {
+
+    private lateinit var inputNome: EditText
+    private lateinit var inputTelefone: EditText
+    private lateinit var inputModelo: EditText
 
     private lateinit var btnDianteira: LinearLayout
     private lateinit var btnLateral: LinearLayout
@@ -64,6 +69,10 @@ class DanificacoesActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_danificacoes)
 
+        inputNome = findViewById(R.id.input_nome)
+        inputTelefone = findViewById(R.id.input_telefone)
+        inputModelo = findViewById(R.id.input_modelo)
+
         btnDianteira = findViewById(R.id.btn_dianteira)
         btnLateral = findViewById(R.id.btn_lateral)
         btnTraseira = findViewById(R.id.btn_traseira)
@@ -114,7 +123,14 @@ class DanificacoesActivity : AppCompatActivity() {
     }
 
     private fun enviarParaBackend() {
+        val nome = inputNome.text.toString().trim()
+        val telefone = inputTelefone.text.toString().trim()
+        val modelo = inputModelo.text.toString().trim()
+
         val json = JSONObject().apply {
+            put("nome_cliente", nome)
+            put("telefone_cliente", telefone)
+            put("modelo_carro", modelo)
             put("dianteira", JSONArray(selecionadosDianteira))
             put("lateral", JSONArray(selecionadosLateral))
             put("traseira", JSONArray(selecionadosTraseira))

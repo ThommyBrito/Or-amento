@@ -25,42 +25,35 @@ class DanificacoesActivity : AppCompatActivity() {
     private lateinit var btnFinalizar: Button
 
     private val opcoesDianteira = arrayOf(
-        "Amassado no para-choque",
-        "Desalinhamento do capô",
-        "Arranhões na pintura",
-        "Retoque de pintura",
-        "Desempenar capô",
-        "Reparar lata com massa"
+        "Recuperar e Pintar para-choque",
+        "Funilaria e Pintura no capô",
+        "Funilaria e Pintura no para-lama esquerdo",
+        "Funilaria e Pintura no para-lama direito",
+        "Alinhamento"
     )
 
     private val opcoesLateral = arrayOf(
-        "Amassado na porta",
-        "Arranhões na lateral",
-        "Desalinhamento da lataria",
-        "Retoque de pintura",
-        "Desempenar lateral",
-        "Refazer pintura completa da lateral"
+        "Funilaria e Pintura na porta do motorista",
+        "Funilaria e Pintura na porta do passageiro",
+        "Funilaria e Pintura na porta traseira esquerda",
+        "Funilaria e Pintura na porta traseira direita",
+        "Alinhamento"
     )
 
     private val opcoesTraseira = arrayOf(
-        "Amassado no porta-malas",
-        "Arranhões no para-choque traseiro",
-        "Retoque de pintura",
-        "Desempenar tampa traseira",
-        "Alinhamento do porta-malas",
-        "Reparo com massa plástica"
+        "Funilaria e Pintura na lateral esquerda",
+        "Funilaria e Pintura na lateral direita",
+        "Funilaria e Pintura na tampa traseira",
+        "Recuperar e Pintar para-choque",
+        "Alinhamento"
     )
 
     private val opcoesPolimento = arrayOf(
-        "Remover riscos leves",
-        "Remover manchas",
-        "Descontaminação da pintura",
-        "Polimento técnico",
-        "Refinamento da pintura",
-        "Aplicação de cera"
+        "Polimento Geral simples",
+        "Polimento Geral técnico",
+        "Cristalização e Vitrificação"
     )
 
-    // ✅ Listas selecionadas
     private val selecionadosDianteira = mutableListOf<String>()
     private val selecionadosLateral = mutableListOf<String>()
     private val selecionadosTraseira = mutableListOf<String>()

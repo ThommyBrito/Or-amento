@@ -88,9 +88,11 @@ class ResumoActivity : AppCompatActivity() {
             }
         }
 
+        // Mostra os itens na tela
         txtDescricaoItens.text = todasAvarias.joinToString("\n")
 
-        val valorTotal = todasAvarias.size * 600
+        // Calcula o valor total (1.000 por item)
+        val valorTotal = todasAvarias.size * 1000
         txtValor.text = "Valor: R$ ${String.format("%,d", valorTotal).replace(",", ".")},00"
     }
 
